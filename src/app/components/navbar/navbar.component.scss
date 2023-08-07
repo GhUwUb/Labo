@@ -1,0 +1,112 @@
+.spacer {
+  flex: 1;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: #659765;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  z-index: 2;
+
+  img{
+    margin: 0 16px;
+  }
+
+  .logo{
+    height: 40px;
+    margin: 0 12px;
+  }
+
+  .logo.youtube{
+    height: 40px;
+    width: 30px;
+  }
+  .active {
+    transform: rotate(180deg);
+    transition: all 0.5s;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+
+  .inactive{
+    transition: all 0.5s;
+    &:hover{
+      transform: rotate(180deg);
+    }
+  }
+
+  .logo{
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -300px;
+  }
+}
+
+.navbar {
+  position: absolute;
+  top: 80px;
+  left: -300px; /* Démarre caché */
+  z-index: 1;
+  background-color: #659765;
+  width: 300px;
+  height: calc(100vh - 80px);
+  animation: slideIn 1s cubic-bezier(.19,1.89,.62,-0.26);
+  transition: left 1s cubic-bezier(.69,.2,.84,-0.16);
+
+  .separateur {
+    position: absolute;
+    width: 500px;
+    left: -200px;
+    height: 10px;
+    background-color: #304730;
+  }
+  .largeur{
+    position: absolute;
+    height: calc(100vh - 80px + 10px);
+    top: -10px;
+    left: -200px;
+    width: 200px;
+    z-index: -1;
+    background-color: #659765;
+  }
+}
+
+.display {
+  animation: slideIn 1s cubic-bezier(0,1.31,.83,1.14);
+  left: 0px;
+}
+
+.notdisplay {
+  animation: slideOut 1s cubic-bezier(.64,-0.22,.92,.23);
+  left: -300px;
+}
+
+

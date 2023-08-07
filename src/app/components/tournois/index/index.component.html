@@ -1,0 +1,28 @@
+<div *ngIf="tournamentIndex">
+  <div class="index">
+    <div class="header">
+      <p class="name">Name</p>
+      <p>Location</p>
+      <p>Categories</p>
+      <p>Elo</p>
+      <p>Statut</p>
+      <p>Fin des inscriptions</p>
+      <p>Joueurs</p>
+      <p></p>
+    </div>
+    <div class="main" *ngFor="let tournament of tournamentIndex.results">
+      <p class="name">{{tournament.name}}</p>
+      <p>{{tournament.location}}</p>
+      <div class="categories">
+        <p *ngFor="let category of tournament.categories">
+          {{category}}
+        </p>
+      </div>
+      <p>{{tournament.eloMin}} - {{tournament.eloMax}}</p>
+      <p>{{tournament.status}}</p>
+      <p>{{tournament.endOfRegistrationDate}}</p>
+      <p>{{tournament.count}} / {{tournament.maxPlayers}}</p>
+      <p></p>
+    </div>
+  </div>
+</div>

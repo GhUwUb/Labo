@@ -1,0 +1,41 @@
+@keyframes slideIn {
+  from {
+    left: 50px;
+    width: 95vw;
+  }
+  to {
+    left: 350px;
+    width: 80vw;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    left: 350px;
+    width: 80vw;
+  }
+  to {
+    left: 50px;
+    width: 95vw;
+  }
+}
+
+main{
+  position: absolute;
+  top: 80px;
+  left : 50px;
+  display : flex;
+  justify-content: center;
+}
+
+.display {
+  animation: slideIn 1s cubic-bezier(0,1.31,.83,1.14);
+  left: 350px;
+  width: 80vw;
+}
+
+.notdisplay {
+  animation: slideOut 1s cubic-bezier(.64,-0.22,.92,.23);
+  left: 50px;
+  width: 95vw;
+}

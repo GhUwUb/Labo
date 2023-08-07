@@ -1,0 +1,32 @@
+<h2>Ajouter un membre</h2>
+
+<form [formGroup]="memberForm" (submit)="addMember()">
+  <div>
+    <div>
+      <input type="text" placeholder="Username" formControlName="username">
+    </div>
+    <div>
+      <input type="date" formControlName="birthDate">
+    </div>
+  </div>
+  <div>
+    <div>
+      <input type="text" placeholder="exemple@exemple.com" formControlName="email">
+    </div>
+    <div>
+      <input type="number" placeholder="0-3000" formControlName="elo">
+    </div>
+    <div>
+      <select formControlName="gender">
+        <option value="" hidden>Votre Genre</option>
+        <option value="male">Homme</option>
+        <option value="female">Femme</option>
+        <option value="others">Autre</option>
+      </select>
+    </div>
+    <div>
+      <input type="submit" value="Ajouter membre">
+    </div>
+  </div>
+
+</form>

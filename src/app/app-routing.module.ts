@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { MemberComponent } from './components/member/member.component';
+import { AddComponent } from './components/tournois/add/add.component';
+import { IndexComponent } from './components/tournois/index/index.component';
+import { TournoisComponent } from './components/tournois/tournois.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path : 'home', component:HomeComponent},
+  {path : 'tournois', loadChildren: () =>import('./components/tournois/tournois.module').then(m => m.TournoisModule)},
+  {path : 'membre/add', component:MemberComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
