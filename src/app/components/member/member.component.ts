@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidatorFn, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MemberService } from 'src/app/services/member/member.service';
 
 @Component({
@@ -26,9 +26,9 @@ export class MemberComponent {
   addMember(){
     if(this.memberForm.valid){
       console.log(this.memberForm.value);
-      this._memberService.postMember(this.memberForm.value)
+      this._memberService.postMember(this.memberForm.value);
     }else{
-      console.log("Pas valide");
+      console.log("Membre pas valide");
 
     }
   }

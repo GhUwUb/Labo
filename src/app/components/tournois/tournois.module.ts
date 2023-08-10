@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IndexComponent } from './index/index.component';
 import { AddComponent } from './add/add.component';
 import { TournoisRoutingModule } from './tournois-routing.module'; // Importez le module de routage
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { TournoisRoutingModule } from './tournois-routing.module'; // Importez l
   ],
   imports: [
     CommonModule,
-    TournoisRoutingModule // Ajoutez le module de routage ici
+    TournoisRoutingModule,
+    ReactiveFormsModule // Ajoutez le module de routage ici
   ]
 })
 export class TournoisModule { }

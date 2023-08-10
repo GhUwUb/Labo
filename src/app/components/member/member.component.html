@@ -1,6 +1,6 @@
 <h2>Ajouter un membre</h2>
 
-<form [formGroup]="memberForm" (submit)="addMember()">
+<form [formGroup]="memberForm" (ngSubmit)="addMember()">
   <div>
     <div>
       <input type="text" placeholder="Username" formControlName="username">

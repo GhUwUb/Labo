@@ -1,1 +1,3 @@
-<p>home works!</p>
+<p *ngIf="!storedUser">Bienvenue !</p>
+
+<p *ngIf="storedUser">Bienvenue {{storedUser.username}}</p>

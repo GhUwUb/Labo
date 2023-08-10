@@ -2,12 +2,30 @@
 <form [formGroup]="tournamentForm" (submit)="addTournament()">
   <div>
     <input type="text" placeholder="Nom" formControlName="name">
+    <input type="text" placeholder="Lieu" formControlName="location">
   </div>
   <div>
-
+    <input type="number" placeholder="2" formControlName="minPlayers">
+    <input type="number" placeholder="2" formControlName="maxPlayers">
   </div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+  <div>
+    <input type="number" placeholder="ELO minimum (0-3000)" formControlName="eloMin">
+    <input type="number" placeholder="ELO maximum (0-3000)" formControlName="eloMax">
+  </div>
+  <div>
+    <div formArrayName="categories">
+      <input type="checkbox" [formControlName]="0" [checked]="isCategorySelected(0)">
+      <label id="Junior">Junior</label>
+      <input type="checkbox" [formControlName]="1" [checked]="isCategorySelected(1)">
+      <label id="Senior">Senior</label>
+      <input type="checkbox" [formControlName]="2" [checked]="isCategorySelected(2)">
+      <label id="Veteran">Veteran</label>
+    </div>
+    <input type="date" placeholder="" formControlName="endOfRegistrationDate">
+  </div>
+  <div>
+    <input type="checkbox" id="womenOnly" formControlName="womenOnly">
+    <label id="womenOnly">Réservés aux Femmes</label>
+  </div>
+  <button type="submit">Ajouter</button>
 </form>
